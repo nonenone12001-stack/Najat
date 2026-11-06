@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Grow a Birthday Garden 🌱 For Najat</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      text-align: center;
+      background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+      min-height: 100vh;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      overflow-x: hidden;
+    }
+    .card {
+      background: rgba(255, 255, 255, 0.85);
+      padding: 30px;
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+      backdrop-filter: blur(10px);
+      max-width: 400px;
+      width: 90%;
+      transition: transform 0.3s ease;
+      position: relative;
+    }
+    .card:hover {
+      transform: translateY(-5px);
+    }
+    h1 {
+      margin-top: 0;
+      color: #2c3e50;
+      font-size: 24px;
+      margin-bottom: 5px;
+    }
+    .friend-name {
+      color: #e91e63;
+      font-size: 18px;
+      font-weight: bold;
+      margin-bottom: 15px;
+      display: block;
+    }
+    p {
+      color: #7f8c8d;
+      margin-bottom: 20px;
+    }
+    #game-stage {
+      height: 150px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 20px 0;
+    }
+    #plant {
+      font-size: 80px;
+      transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      user-select: none;
+    }
+    .pulse {
+      animation: pulseAnim 0.5s alternate infinite;
+    }
+    @keyframes pulseAnim {
+      from { transform: scale(1); }
+      to { transform: scale(1.05); }
+    }
+    #status {
+      font-weight: bold;
+      color: #27ae60;
+      margin: 15px 0;
+      min-height: 20px;
+    }
+    button {
+      padding: 12px 28px;
+      font-size: 18px;
+      border: none;
+      border-radius: 50px;
+      background: linear-gradient(135deg, #4caf50 0%, #2e7d32 100%);
+      color: white;
+      cursor: pointer;
+      box-shadow: 0 5px 15px rgba(76, 175, 80, 0.4);
+      transition: all 0.3s ease;
+      font-weight: bold;
+    }
+    button:hover {
+      background: linear-gradient(135deg, #66bb6a 0%, #388e3c 100%);
+      box-shadow: 0 7px 20px rgba(76, 175, 80, 0.6);
+      transform: scale(1.05);
+    }
+    button:active {
+      transform: scale(0.98);
+    }
+    button:disabled {
+      background: #bdc3c7;
+      box-shadow: none;
+      cursor: not-allowed;
+    }
+    .confetti {
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      background-color: #f2d74e;
+      animation: confettiFall 3s linear infinite;
+      top: -10px;
+      z-index: 999;
+    }
+    @keyframes confettiFall {
+      0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+      100% { transform: translateY(100vh) rotate(720deg); opacity: 0; }
+    }
+    #envelope-container {
+      display: none;
+      margin-top: 20px;
+      animation: fadeInUp 1s ease forwards;
+    }
+    .envelope-btn {
+      background: linear-gradient(135deg, #ff4081 0%, #ec407a 100%);
+      box-shadow: 0 5px 15px rgba(236, 64, 122, 0.4);
+      font-size: 16px;
+      padding: 10px 22px;
+    }
+    .envelope-btn:hover {
+      background: linear-gradient(135deg, #ff6097 0%, #f06292 100%);
+      box-shadow: 0 7px 20px rgba(236, 64, 122, 0.6);
+    }
+    .modal-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      backdrop-filter: blur(5px);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+      opacity: 0;
+
+    
